@@ -1,0 +1,268 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>CSS Animation Sample</title>
+    <meta charset="utf-8" />
+
+
+
+    <link href="animate.css" rel="stylesheet" />
+
+    <style>
+        * {
+            -moz-box-sizing: content-box;
+            -webkit-box-sizing: content-box;
+            box-sizing: content-box;
+        }
+
+        /* Lazy Copy button styles from Bootstrap */
+
+        .btn {
+            display: inline-block;
+            padding: 6px 12px;
+            margin-bottom: 0;
+            font-size: 14px;
+            font-weight: normal;
+            line-height: 1.42857143;
+            text-align: center;
+            white-space: nowrap;
+            vertical-align: middle;
+            -ms-touch-action: manipulation;
+            touch-action: manipulation;
+            cursor: pointer;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+            background-image: none;
+            border: 1px solid transparent;
+            border-radius: 4px;
+        }
+
+            .btn:focus,
+            .btn:active:focus,
+            .btn.active:focus,
+            .btn.focus,
+            .btn:active.focus,
+            .btn.active.focus {
+                outline: thin dotted;
+                outline: 5px auto -webkit-focus-ring-color;
+                outline-offset: -2px;
+            }
+
+            .btn:hover,
+            .btn:focus,
+            .btn.focus {
+                color: #333;
+                text-decoration: none;
+            }
+
+            .btn:active,
+            .btn.active {
+                background-image: none;
+                outline: 0;
+                -webkit-box-shadow: inset 0 3px 5px rgba(0, 0, 0, .125);
+                box-shadow: inset 0 3px 5px rgba(0, 0, 0, .125);
+            }
+
+            .btn.disabled,
+            .btn[disabled],
+            fieldset[disabled] .btn {
+                cursor: not-allowed;
+                filter: alpha(opacity=65);
+                -webkit-box-shadow: none;
+                box-shadow: none;
+                opacity: .65;
+            }
+
+        a.btn.disabled,
+        fieldset[disabled] a.btn {
+            pointer-events: none;
+        }
+
+
+        .btn-success {
+            color: #fff;
+            background-color: #5cb85c;
+            border-color: #4cae4c;
+        }
+
+            .btn-success:focus,
+            .btn-success.focus {
+                color: #fff;
+                background-color: #449d44;
+                border-color: #255625;
+            }
+
+            .btn-success:hover {
+                color: #fff;
+                background-color: #449d44;
+                border-color: #398439;
+            }
+
+            .btn-success:active,
+            .btn-success.active,
+            .open > .dropdown-toggle.btn-success {
+                color: #fff;
+                background-color: #449d44;
+                border-color: #398439;
+            }
+
+                .btn-success:active:hover,
+                .btn-success.active:hover,
+                .open > .dropdown-toggle.btn-success:hover,
+                .btn-success:active:focus,
+                .btn-success.active:focus,
+                .open > .dropdown-toggle.btn-success:focus,
+                .btn-success:active.focus,
+                .btn-success.active.focus,
+                .open > .dropdown-toggle.btn-success.focus {
+                    color: #fff;
+                    background-color: #398439;
+                    border-color: #255625;
+                }
+
+            .btn-success:active,
+            .btn-success.active,
+            .open > .dropdown-toggle.btn-success {
+                background-image: none;
+            }
+
+            .btn-success.disabled,
+            .btn-success[disabled],
+            fieldset[disabled] .btn-success,
+            .btn-success.disabled:hover,
+            .btn-success[disabled]:hover,
+            fieldset[disabled] .btn-success:hover,
+            .btn-success.disabled:focus,
+            .btn-success[disabled]:focus,
+            fieldset[disabled] .btn-success:focus,
+            .btn-success.disabled.focus,
+            .btn-success[disabled].focus,
+            fieldset[disabled] .btn-success.focus,
+            .btn-success.disabled:active,
+            .btn-success[disabled]:active,
+            fieldset[disabled] .btn-success:active,
+            .btn-success.disabled.active,
+            .btn-success[disabled].active,
+            fieldset[disabled] .btn-success.active {
+                background-color: #5cb85c;
+                border-color: #4cae4c;
+            }
+
+            .btn-success .badge {
+                color: #5cb85c;
+                background-color: #fff;
+            }
+
+
+        .pull-right {
+            float: right !important;
+        }
+
+        .pull-left {
+            float: left !important;
+        }
+
+        .hide {
+            display: none !important;
+        }
+
+        .show {
+            display: block !important;
+        }
+
+        /* End Bootstrap code */
+
+        .login-dialog {
+            background-color: #ffd500;
+            color: #222;
+            font-size: 1.2em;
+            margin: auto;
+            width: 40%;
+            height: 30%;
+            position: absolute;
+            top: 35%;
+            left: 30%;
+            opacity: 0;
+        }
+
+        .vertical-list {
+            list-style-type: none;
+        }
+
+            .vertical-list li {
+                clear: both;
+                display: block;
+                margin: 5% 1% 0 1%;
+                width: 98%;
+                height: 2em;
+            }
+
+            .vertical-list label {
+                width: 20%;
+                margin: 0 1% 0 0;
+            }
+
+            .vertical-list input {
+                border: 1px solid #000;
+                border-radius: 3px;
+                width: 75%;
+                margin: 0;
+                height: 1.5em;
+                padding: .5% .1%;
+            }
+
+        .btn-show-login {
+            margin: 5% auto;
+            display: block;
+        }
+    </style>
+
+</head>
+<body>
+
+    <button type="button" class="btn btn-success btn-show-login animated fadeIn">Login</button>
+
+    <div class="login-dialog animated">
+
+        <ul class="vertical-list">
+            <li>
+                <label>Username:</label>
+                <input type="text" name="username" value="" />
+            </li>
+            <li>
+                <label>Password:</label>
+                <input type="password" name="username" value="" />
+            </li>
+            <li><button type="button" class="btn btn-success pull-right btn-login">Login</button></li>
+        </ul>
+
+    </div>
+
+    <script>
+
+        var showLogin = document.querySelector(".btn-show-login"),
+            loginDlg = document.querySelector(".login-dialog"),
+            loginBtn = document.querySelector(".btn-login");
+
+        showLogin.addEventListener("click", function () {
+
+            loginDlg.classList.add("fadeInDown");
+            showLogin.classList.add("fadeOut");
+            loginDlg.classList.remove("fadeOutUp");
+
+        });
+
+        loginBtn.addEventListener("click", function () {
+
+            loginDlg.classList.remove("fadeInDown");
+            loginDlg.classList.add("fadeOutUp");
+            showLogin.classList.remove("fadeOut");
+            showLogin.classList.add("fadeIn");
+
+        });
+
+    </script>
+</body>
+</html>
